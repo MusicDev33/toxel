@@ -9,7 +9,13 @@
     "strict": true,
     "types": ["node"],
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": "src",
+    "paths": {
+      "@parse/*": ["parse/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@files/*": ["files/*"]
+    }
   },
   "include": [
     "src/**/*.ts",
