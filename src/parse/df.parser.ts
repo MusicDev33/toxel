@@ -6,7 +6,7 @@ export const dfParse = (input: string) => {
   const rows = parseRows(input);
 
   let keys: string[];
-  let keyMap: Map<number, string>;
+  let keyMap: Map<number, string> = new Map();
   const parsedData: IDFOutput[] = [];
 
   // This is backwards, I know...
@@ -18,8 +18,8 @@ export const dfParse = (input: string) => {
 
   rows.forEach((row) => {
     const values = row.split(' ');
+    const newDFOutput: Map<string, any> = new Map();
     values.forEach((value, index) => {
-      const newDFOutput: Map<string, any> = new Map();
       const dfMapKey = keyMap.get(index);
       const dfMapRes = dfMapKey && DFMap.get(dfMapKey);
 
@@ -27,6 +27,7 @@ export const dfParse = (input: string) => {
         newDFOutput.set(dfMapRes, value);
       }
     });
+    console.log(newDFOutput);
   });
 
   console.log(rows);
