@@ -19,12 +19,12 @@ export const dfParse = (input: string) => {
   rows.forEach((row) => {
     const values = row.split(' ');
     values.forEach((value, index) => {
-      const newDFOutput = {};
+      const newDFOutput: Map<string, any> = new Map();
       const dfMapKey = keyMap.get(index);
       const dfMapRes = dfMapKey && DFMap.get(dfMapKey);
 
       if (dfMapRes) {
-        newDFOutput[dfMapRes] = value;
+        newDFOutput.set(dfMapRes, value);
       }
     });
   });

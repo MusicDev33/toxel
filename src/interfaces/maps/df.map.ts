@@ -1,3 +1,5 @@
+import os from 'os';
+
 // TODO: Figure out how the hell to map columns in a type-safe manner
 
 // EDIT: So I did it and wow, this is some serious wizardry going on here,
@@ -15,11 +17,27 @@ export enum DFEnum {
   mountName = 'mountName'
 }
 
-export const DFMap: Map<string, DFEnum> = new Map([
-  [ 'Filesystem', DFEnum.fileSystem ],
-  [ 'Size', DFEnum.size ],
-  [ 'Used', DFEnum.usedSpace ],
-  [ 'Avail', DFEnum.availableSpace ],
-  [ 'Use%', DFEnum.usePercentage ],
-  [ 'Mounted', DFEnum.mountName ]
-]);
+const OS = os.platform();
+let DFMap: Map<string, string>;
+
+if (OS === 'darwin') {
+  DFMap = new Map([
+    [ 'Filesystem', DFEnum.fileSystem ],
+    [ 'Size', DFEnum.size ],
+    [ 'Used', DFEnum.usedSpace ],
+    [ 'Avail', DFEnum.availableSpace ],
+    [ 'Capacity', DFEnum.usePercentage ],
+    [ 'Mounted', DFEnum.mountName ]
+  ]);
+} else {
+  DFMap = new Map([
+    [ 'Filesystem', DFEnum.fileSystem ],
+    [ 'Size', DFEnum.size ],
+    [ 'Used', DFEnum.usedSpace ],
+    [ 'Avail', DFEnum.availableSpace ],
+    [ 'Use%', DFEnum.usePercentage ],
+    [ 'Mounted', DFEnum.mountName ]
+  ]);
+}
+
+export { DFMap };
