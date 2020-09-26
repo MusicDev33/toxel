@@ -14,7 +14,8 @@
     "paths": {
       "@parse/*": ["parse/*"],
       "@interfaces/*": ["interfaces/*"],
-      "@files/*": ["files/*"]
+      "@files/*": ["files/*"],
+      "@validate/*": ["validate/*"]
     }
   },
   "include": [
