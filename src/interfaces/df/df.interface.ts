@@ -1,7 +1,7 @@
 export interface IDFOutput {
   fileSystem: string;
-  
-  // Size in bytes (1024)
+
+  // Size in bytes
   size: number;
   usedSpace: number;
   availableSpace: number;

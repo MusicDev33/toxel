@@ -1,5 +1,6 @@
-import { IDFOutput } from './df.interface';
 import { DFEnum } from '@interfaces/maps/df.map';
+import { IDFOutput } from '@interfaces/df/df.interface';
+
 
 export class DFBuilder {
   private fileSystem = '';
@@ -20,9 +21,59 @@ export class DFBuilder {
     return this;
   }
 
+  setSize() {
+    const sizeToBeConverted = this.starterOutput.get(DFEnum.size);
+    this.size = this.sizeToBytes(sizeToBeConverted);
+
+    return this;
+  }
+
+  setUsage() {
+    const usageString = this.starterOutput.get(DFEnum.usedSpace);
+    const availString = this.starterOutput.get(DFEnum.availableSpace);
+
+    this.usedSpace = this.sizeToBytes(usageString);
+    this.availableSpace = this.sizeToBytes(availString);
+
+    this.usePercentage = parseInt(this.starterOutput.get(DFEnum.usePercentage)!.slice(0, -1));
+    return this;
+  }
+
+  setMount() {
+    this.mountName = this.starterOutput.get(DFEnum.mountName)!;
+
+    return this;
+  }
+
+  build(): IDFOutput {
+    const output: IDFOutput = {
+      fileSystem: this.fileSystem,
+      size: this.size,
+      usedSpace: this.usedSpace,
+      availableSpace: this.availableSpace,
+      usePercentage: this.usePercentage,
+      mountName: this.mountName
+    }
+
+    return output;
+  }
+
   // This is fine because generally, JS's max safe number size is 9007199254740992
   // Which, in bytes, is about 9 petabytes.
-  private sizeToBytes(sizeString: string): number {
+  private sizeToBytes(sizeString: string | undefined): number {
+    if (!sizeString) {
+      return 0;
+    }
+    const oldSize = parseFloat(sizeString.slice(0, -1));
+
+    if (/^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$/.test(sizeString)) {
+      return parseFloat(sizeString);
+    }
+
+    if (!oldSize) {
+      return 0;
+    }
+
     const sizeDict: {[size: string]: number} = {
       'K': 1000,
       'M': 1000 ** 2,
@@ -31,6 +82,9 @@ export class DFBuilder {
       'P': 1000 ** 5
     }
 
+    const prefix = sizeString.slice(-1);
+    const byteSize = (oldSize * sizeDict[prefix]);
 
+    return Math.trunc(byteSize);
   }
 }

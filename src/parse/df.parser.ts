@@ -1,9 +1,12 @@
 import { IDFOutput } from '@interfaces/df/df.interface';
 import { DFMap } from '@interfaces/maps/df.map';
+import { DFFactory } from '@interfaces/df/df.factory';
 
-export const dfParse = (input: string): IDFOutput[] => {
+// return IDFOutput[]
+export const dfParse = (input: string) => {
 
   const rows = parseRows(input);
+  const dfFactory = new DFFactory();
 
   let keys: string[];
   let keyMap: Map<number, string> = new Map();
@@ -27,7 +30,7 @@ export const dfParse = (input: string): IDFOutput[] => {
         newDFOutput.set(dfMapRes, value);
       }
     });
-    console.log(newDFOutput);
+    console.log(dfFactory.createDFOutput(newDFOutput));
 
   });
 
