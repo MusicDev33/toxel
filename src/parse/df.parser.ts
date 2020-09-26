@@ -1,7 +1,7 @@
 import { IDFOutput } from '@interfaces/df/df.interface';
 import { DFMap } from '@interfaces/maps/df.map';
 
-export const dfParse = (input: string) => {
+export const dfParse = (input: string): IDFOutput[] => {
 
   const rows = parseRows(input);
 
@@ -18,7 +18,7 @@ export const dfParse = (input: string) => {
 
   rows.forEach((row) => {
     const values = row.split(' ');
-    const newDFOutput: Map<string, any> = new Map();
+    const newDFOutput: Map<string, string> = new Map();
     values.forEach((value, index) => {
       const dfMapKey = keyMap.get(index);
       const dfMapRes = dfMapKey && DFMap.get(dfMapKey);
@@ -28,6 +28,7 @@ export const dfParse = (input: string) => {
       }
     });
     console.log(newDFOutput);
+
   });
 
   console.log(rows);
