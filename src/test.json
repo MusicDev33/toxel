@@ -1,0 +1,226 @@
+[
+  {
+    "fileSystem": "udev",
+    "size": 8300000000,
+    "usedSpace": 0,
+    "availableSpace": 8300000000,
+    "usePercentage": 0,
+    "mountName": "/dev"
+  },
+  {
+    "fileSystem": "tmpfs",
+    "size": 1700000000,
+    "usedSpace": 2100000,
+    "availableSpace": 1700000000,
+    "usePercentage": 1,
+    "mountName": "/run"
+  },
+  {
+    "fileSystem": "/dev/sda3",
+    "size": 196000000000,
+    "usedSpace": 22000000000,
+    "availableSpace": 165000000000,
+    "usePercentage": 12,
+    "mountName": "/"
+  },
+  {
+    "fileSystem": "tmpfs",
+    "size": 8300000000,
+    "usedSpace": 914000000,
+    "availableSpace": 7400000000,
+    "usePercentage": 12,
+    "mountName": "/dev/shm"
+  },
+  {
+    "fileSystem": "tmpfs",
+    "size": 5300000,
+    "usedSpace": 4100,
+    "availableSpace": 5300000,
+    "usePercentage": 1,
+    "mountName": "/run/lock"
+  },
+  {
+    "fileSystem": "tmpfs",
+    "size": 8300000000,
+    "usedSpace": 0,
+    "availableSpace": 8300000000,
+    "usePercentage": 0,
+    "mountName": "/sys/fs/cgroup"
+  },
+  {
+    "fileSystem": "/dev/loop1",
+    "size": 170000000,
+    "usedSpace": 170000000,
+    "availableSpace": 0,
+    "usePercentage": 100,
+    "mountName": "/snap/gnome-3-28-1804/128"
+  },
+  {
+    "fileSystem": "/dev/loop2",
+    "size": 58000000,
+    "usedSpace": 58000000,
+    "availableSpace": 0,
+    "usePercentage": 100,
+    "mountName": "/snap/gtk-common-themes/1502"
+  },
+  {
+    "fileSystem": "/dev/loop3",
+    "size": 169000000,
+    "usedSpace": 169000000,
+    "availableSpace": 0,
+    "usePercentage": 100,
+    "mountName": "/snap/gnome-3-28-1804/116"
+  },
+  {
+    "fileSystem": "/dev/loop0",
+    "size": 59000000,
+    "usedSpace": 59000000,
+    "availableSpace": 0,
+    "usePercentage": 100,
+    "mountName": "/snap/core18/1885"
+  },
+  {
+    "fileSystem": "/dev/loop4",
+    "size": 1100000,
+    "usedSpace": 1100000,
+    "availableSpace": 0,
+    "usePercentage": 100,
+    "mountName": "/snap/gnome-logs/100"
+  },
+  {
+    "fileSystem": "/dev/loop5",
+    "size": 2400000,
+    "usedSpace": 2400000,
+    "availableSpace": 0,
+    "usePercentage": 100,
+    "mountName": "/snap/gnome-system-monitor/145"
+  },
+  {
+    "fileSystem": "/dev/loop7",
+    "size": 66000000,
+    "usedSpace": 66000000,
+    "availableSpace": 0,
+    "usePercentage": 100,
+    "mountName": "/snap/gtk-common-themes/1506"
+  },
+  {
+    "fileSystem": "/dev/loop8",
+    "size": 1100000,
+    "usedSpace": 1100000,
+    "availableSpace": 0,
+    "usePercentage": 100,
+    "mountName": "/snap/gnome-logs/93"
+  },
+  {
+    "fileSystem": "/dev/loop9",
+    "size": 394000,
+    "usedSpace": 394000,
+    "availableSpace": 0,
+    "usePercentage": 100,
+    "mountName": "/snap/gnome-characters/550"
+  },
+  {
+    "fileSystem": "/dev/loop10",
+    "size": 2400000,
+    "usedSpace": 2400000,
+    "availableSpace": 0,
+    "usePercentage": 100,
+    "mountName": "/snap/gnome-system-monitor/148"
+  },
+  {
+    "fileSystem": "/dev/loop11",
+    "size": 2700000,
+    "usedSpace": 2700000,
+    "availableSpace": 0,
+    "usePercentage": 100,
+    "mountName": "/snap/gnome-calculator/748"
+  },
+  {
+    "fileSystem": "/dev/loop12",
+    "size": 269000000,
+    "usedSpace": 269000000,
+    "availableSpace": 0,
+    "usePercentage": 100,
+    "mountName": "/snap/gnome-3-34-1804/36"
+  },
+  {
+    "fileSystem": "/dev/loop15",
+    "size": 58000000,
+    "usedSpace": 58000000,
+    "availableSpace": 0,
+    "usePercentage": 100,
+    "mountName": "/snap/core18/1880"
+  },
+  {
+    "fileSystem": "/dev/loop16",
+    "size": 269000000,
+    "usedSpace": 269000000,
+    "availableSpace": 0,
+    "usePercentage": 100,
+    "mountName": "/snap/gnome-3-34-1804/33"
+  },
+  {
+    "fileSystem": "/dev/loop14",
+    "size": 102000000,
+    "usedSpace": 102000000,
+    "availableSpace": 0,
+    "usePercentage": 100,
+    "mountName": "/snap/core/9804"
+  },
+  {
+    "fileSystem": "/dev/sda1",
+    "size": 536000000,
+    "usedSpace": 6400000,
+    "availableSpace": 530000000,
+    "usePercentage": 2,
+    "mountName": "/boot/efi"
+  },
+  {
+    "fileSystem": "/dev/sda4",
+    "size": 755000000000,
+    "usedSpace": 59000000000,
+    "availableSpace": 658000000000,
+    "usePercentage": 9,
+    "mountName": "/home"
+  },
+  {
+    "fileSystem": "tmpfs",
+    "size": 1700000000,
+    "usedSpace": 17000,
+    "availableSpace": 1700000000,
+    "usePercentage": 1,
+    "mountName": "/run/user/121"
+  },
+  {
+    "fileSystem": "tmpfs",
+    "size": 1700000000,
+    "usedSpace": 62000,
+    "availableSpace": 1700000000,
+    "usePercentage": 1,
+    "mountName": "/run/user/1000"
+  },
+  {
+    "fileSystem": "/dev/loop18",
+    "size": 102000000,
+    "usedSpace": 102000000,
+    "availableSpace": 0,
+    "usePercentage": 100,
+    "mountName": "/snap/core/9993"
+  },
+  {
+    "fileSystem": "/dev/loop6",
+    "size": 394000,
+    "usedSpace": 394000,
+    "availableSpace": 0,
+    "usePercentage": 100,
+    "mountName": "/snap/gnome-characters/570"
+  },
+  {
+    "fileSystem": "/dev/loop19",
+    "size": 2700000,
+    "usedSpace": 2700000,
+    "availableSpace": 0,
+    "usePercentage": 100,
+    "mountName": "/snap/gnome-calculator/826"
+  }
+]

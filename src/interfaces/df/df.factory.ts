@@ -6,7 +6,8 @@ export class DFFactory {
 
   }
 
-  createDFOutput(input: Map<string, string>): IDFOutput {
-    return new DFBuilder(input).setFileSystem().setSize().setUsage().setMount().build();
+  createDFOutput(input: Map<string, string>, options?: {humanReadable: boolean}): IDFOutput {
+    const humanReadable = options ? options.humanReadable : false;
+    return new DFBuilder(input).setFileSystem().setSize(humanReadable).setUsage(humanReadable).setMount().build();
   }
 }

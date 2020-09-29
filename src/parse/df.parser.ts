@@ -2,8 +2,12 @@ import { IDFOutput } from '@interfaces/df/df.interface';
 import { DFMap } from '@interfaces/maps/df.map';
 import { DFFactory } from '@interfaces/df/df.factory';
 
-// return IDFOutput[]
-export const dfParse = (input: string) => {
+export const dfParse = (input: string, options?: string): IDFOutput[] => {
+  let humanReadable = false;
+
+  if (options && options.includes('-H')) {
+    humanReadable = true;
+  }
 
   const rows = parseRows(input);
   const dfFactory = new DFFactory();
@@ -30,11 +34,11 @@ export const dfParse = (input: string) => {
         newDFOutput.set(dfMapRes, value);
       }
     });
-    console.log(dfFactory.createDFOutput(newDFOutput));
 
+    parsedData.push(dfFactory.createDFOutput(newDFOutput, {humanReadable}));
   });
 
-  console.log(rows);
+  return parsedData;
 }
 
 const parseRows = (input: string): string[] => {

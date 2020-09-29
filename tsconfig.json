@@ -14,8 +14,9 @@
     "paths": {
       "@parse/*": ["parse/*"],
       "@interfaces/*": ["interfaces/*"],
-      "@files/*": ["files/*"],
-      "@validate/*": ["validate/*"]
+      "@validate/*": ["validate/*"],
+      "@drivers/*": ["drivers/*"],
+      "@backup/*": ["backup/*"]
     }
   },
   "include": [

@@ -24,8 +24,10 @@ if (OS === 'darwin') {
   DFMap = new Map([
     [ 'Filesystem', DFEnum.fileSystem ],
     [ 'Size', DFEnum.size ],
+    [ '512-blocks', DFEnum.size ],
     [ 'Used', DFEnum.usedSpace ],
     [ 'Avail', DFEnum.availableSpace ],
+    [ 'Available', DFEnum.availableSpace],
     [ 'Capacity', DFEnum.usePercentage ],
     [ 'Mounted', DFEnum.mountName ]
   ]);
@@ -33,8 +35,10 @@ if (OS === 'darwin') {
   DFMap = new Map([
     [ 'Filesystem', DFEnum.fileSystem ],
     [ 'Size', DFEnum.size ],
+    [ '1K-blocks', DFEnum.size ],
     [ 'Used', DFEnum.usedSpace ],
     [ 'Avail', DFEnum.availableSpace ],
+    [ 'Available', DFEnum.availableSpace],
     [ 'Use%', DFEnum.usePercentage ],
     [ 'Mounted', DFEnum.mountName ]
   ]);

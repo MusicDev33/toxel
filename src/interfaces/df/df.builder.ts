@@ -21,19 +21,20 @@ export class DFBuilder {
     return this;
   }
 
-  setSize() {
+  setSize(humanReadable: boolean) {
     const sizeToBeConverted = this.starterOutput.get(DFEnum.size);
-    this.size = this.sizeToBytes(sizeToBeConverted);
-
+    this.size = humanReadable ? this.sizeToBytes(sizeToBeConverted) : this.sizeFrom1k(sizeToBeConverted);
     return this;
   }
 
-  setUsage() {
+  setUsage(humanReadable: boolean) {
     const usageString = this.starterOutput.get(DFEnum.usedSpace);
     const availString = this.starterOutput.get(DFEnum.availableSpace);
 
-    this.usedSpace = this.sizeToBytes(usageString);
-    this.availableSpace = this.sizeToBytes(availString);
+    // console.log(usageString);
+
+    this.usedSpace = humanReadable ? this.sizeToBytes(usageString) : this.sizeFrom1k(usageString);
+    this.availableSpace = humanReadable ? this.sizeToBytes(availString) : this.sizeFrom1k(availString);
 
     this.usePercentage = parseInt(this.starterOutput.get(DFEnum.usePercentage)!.slice(0, -1));
     return this;
@@ -61,9 +62,12 @@ export class DFBuilder {
   // This is fine because generally, JS's max safe number size is 9007199254740992
   // Which, in bytes, is about 9 petabytes.
   private sizeToBytes(sizeString: string | undefined): number {
+    // console.log(`Input: ${sizeString}`);
+
     if (!sizeString) {
       return 0;
     }
+
     const oldSize = parseFloat(sizeString.slice(0, -1));
 
     if (/^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)$/.test(sizeString)) {
@@ -82,9 +86,21 @@ export class DFBuilder {
       'P': 1000 ** 5
     }
 
-    const prefix = sizeString.slice(-1);
+    const prefix = sizeString.slice(-1).toUpperCase();
     const byteSize = (oldSize * sizeDict[prefix]);
 
+    // console.log(`Output: ${Math.trunc(byteSize)}`);
+
     return Math.trunc(byteSize);
+  }
+
+  private sizeFrom1k(sizeString: string | undefined): number {
+    if (!sizeString || !parseInt(sizeString)) {
+      return 0;
+    }
+
+    const result = parseInt(sizeString) * 1024;
+    console.log(result);
+    return result;
   }
 }
