@@ -100,7 +100,6 @@ export class DFBuilder {
     }
 
     const result = parseInt(sizeString) * 1024;
-    console.log(result);
     return result;
   }
 }

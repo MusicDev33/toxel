@@ -10,5 +10,6 @@ import fs from 'fs';
 import { getAllDiskUsage, getSingleDiskUsage } from '@drivers/df.driver';
 
 const diskUsage = getAllDiskUsage('-H');
+const du = getSingleDiskUsage('/home');
 console.log(__dirname);
-fs.writeFileSync(`${__dirname}/test.json`, JSON.stringify(diskUsage, null, 2));
+fs.writeFileSync(`${__dirname}/test.json`, JSON.stringify(du, null, 2));
