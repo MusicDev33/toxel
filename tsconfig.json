@@ -16,7 +16,8 @@
       "@interfaces/*": ["interfaces/*"],
       "@validate/*": ["validate/*"],
       "@drivers/*": ["drivers/*"],
-      "@backup/*": ["backup/*"]
+      "@backup/*": ["backup/*"],
+      "@util/*": ["util/*"]
     }
   },
   "include": [
