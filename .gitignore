@@ -4,3 +4,5 @@
 bin
 test.json
 /test
+.conf
+/store
