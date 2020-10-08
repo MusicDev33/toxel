@@ -1,0 +1,2 @@
+cronrule:source:archivepath:archivename
+0 7 * * *:/home/username/directory:/home/username/backups

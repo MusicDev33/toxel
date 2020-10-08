@@ -2,9 +2,6 @@
 // tslint:disable-next-line
 require('tsconfig-paths/register');
 
-import chalk from 'chalk';
-import clear from 'clear';
-import figlet from 'figlet';
 import fs from 'fs';
 import path from 'path';
 
