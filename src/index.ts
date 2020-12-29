@@ -13,13 +13,15 @@ import { confParse } from '@parse/conf.parse';
 
 const confOutput = fs.readFileSync(path.join(__dirname, '../.conf'), 'utf8');
 const foldersToBackup = confParse(confOutput);
+console.log(foldersToBackup);
 
 const diskUsage = getAllDiskUsage('-H');
 const du = getSingleDiskUsage('/home');
-
+/*
 const pathName = path.join(__dirname, '../test');
 const fileName = createTimeFileName('weekly.tar.gz');
 const bu = createOneBackup(`${pathName}/${fileName}`, pathName);
+*/
 
 foldersToBackup.forEach((folderConf) => {
   scheduler.scheduleJob(folderConf.cronString, () => {
