@@ -4,6 +4,7 @@ import path from 'path';
 import { createOneBackup } from '@drivers/backup.driver';
 
 const testFolder = path.join(__dirname, '../../test');
+const root = path.join(__dirname, '../../');
 
 export const createTestFiles = () => {
   const testText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\n';
@@ -18,8 +19,8 @@ export const createTestFiles = () => {
   }
 }
 
-const archiveTestFiles = () => {
-
+export const archiveTestFiles = () => {
+  createOneBackup(path.join(root, 'test.tar.gz'), testFolder, {sync: true});
 }
 
 export const cleanUpTesting = () => {
