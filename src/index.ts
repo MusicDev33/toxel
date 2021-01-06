@@ -25,9 +25,14 @@ const bu = createOneBackup(`${pathName}/${fileName}`, pathName);
 
 foldersToBackup.forEach((folderConf) => {
   scheduler.scheduleJob(folderConf.cronString, () => {
-    if (!folderConf.archiveName) {
-      createOneBackup(`${folderConf.archiveLocation}/${createTimeFileName('weekly.tar.gz')}`, folderConf.path);
+    console.log('backing up');
+    let archiveName = '';
+
+    if (folderConf.archiveName) {
+      archiveName = folderConf.archiveName;
     }
+    let extension = `${archiveName}.weekly.tar.gz`;
+    createOneBackup(`${folderConf.archiveLocation}/${createDateFileName(extension)}`, folderConf.path);
   });
 });
 

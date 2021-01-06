@@ -11,5 +11,5 @@
 // TODO: Delete oldest backup
 // TODO: Detect storage space left, act accordingly
 export const manageDriver = () => {
-
+  
 }
