@@ -6,3 +6,5 @@ test.json
 /test
 .conf
 /store
+.exclude
+.exclude.default
